@@ -59,6 +59,32 @@ int registrar() //função responsável por cadastrar os usuários no sistema
 	
 	printf("Usuário resgistrado com sucesso.\n\n");
 	
+	printf(" Deseja registrar um novo usuário? \n"); //opção para registrar novo usuário ou voltar ao menu principal
+	printf("\t1 - Sim\n");
+	printf("\t2 - Não\n");
+	
+	while (1) //repetir enquanto não cair em algum dos casos
+	{ 
+		scanf("%d", &opcao); //armazena a escolha
+		
+		switch(opcao){ //início da seleção
+			case 1:
+			registrar();
+			break;
+		
+			case 2:
+			main();
+			break;
+			
+			default:
+			printf("Essa opção não está disponível.\n\n");
+			printf("Deseja registrar um novo usuário? \n");
+			printf("\t1 - Sim\n");
+			printf("\t2 - Não\n");
+			break;
+		} //fim da seleção
+	} //fim da repetição
+	
 	system("pause"); //pausa a execução do programa
 }
 
@@ -89,6 +115,32 @@ int consultar() //função responsável por consultar os usuários no sistema
 		printf("%s", conteudo); 
 		printf("\n\n");
 	}
+		
+	printf("Deseja consultar um novo usuário? \n"); //opção para consultar novo usuário ou voltar ao menu principal
+	printf("\t1 - Sim\n");
+	printf("\t2 - Não\n");
+	
+	while (1) //repetir enquanto não cair em algum dos casos
+	{ 
+		scanf("%d", &opcao); //armazena a escolha
+		
+		switch(opcao){ //início da seleção
+			case 1:
+			consultar();
+			break;
+		
+			case 2:
+			main();
+			break;
+			
+			default:
+			printf("Essa opção não está disponível.\n\n");
+			printf("Deseja consultar um novo usuário? \n");
+			printf("\t1 - Sim\n");
+			printf("\t2 - Não\n");
+			break;
+		} //fim da seleção
+	} //fim da repetição
 	
 	system("pause"); //pausa a execução do programa
 }
@@ -100,7 +152,7 @@ int deletar()
 	int opcao=0;
 	//final da criação de variáveis/string
 	
-	printf("Digite o CPF do usuário a ser deletado: ");//coletando informações do usuário
+	printf("Digite o CPF do usuário a ser deletado: \n");//coletando informações do usuário
 	scanf("%s",cpf);//criando a string responsável por armazear o dado "cpf"
 	
 	FILE *file;
@@ -115,6 +167,32 @@ int deletar()
 		remove(cpf); //exclui o arquivo
 		printf("Usuário deletado com sucesso.\n\n");
 	}
+	
+	printf("Deseja deletar um novo usuário? \n"); //opção para deletar novo usuário ou voltar ao menu principal
+	printf("\t1 - Sim\n");
+	printf("\t2 - Não\n");
+	
+	while (1) //repetir enquanto não cair em algum dos casos
+	{ 
+		scanf("%d", &opcao); //armazena a escolha
+		
+		switch(opcao){ //início da seleção
+			case 1:
+			deletar();
+			break;
+		
+			case 2:
+			main();
+			break;
+			
+			default:
+			printf("Essa opção não está disponível.\n\n");
+			printf("Deseja deletar um novo usuário? \n");
+			printf("\t1 - Sim\n");
+			printf("\t2 - Não\n");
+			break;
+		} //fim da seleção
+	} //fim da repetição
 	
 	system("pause"); //pausa a execução do programa
 	
@@ -137,8 +215,7 @@ int main()
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nome\n");
 		printf("\t3 - Deletar nomes\n"); 
-		printf("\t4 - Sair do sistema\n\n");
-		
+		printf("\t4 - Sair do sistema\n\n"); 
 		printf("Opção: ");//Fim do menu
 	
 		scanf("%d", &opcao); //Armazenando as informações
